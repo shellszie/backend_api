@@ -16,7 +16,7 @@ class RegistrationController < ApplicationController
   private
 
   def user_params
-    params.permit(:email, :password, :password_confirmation)
+    params.require(:registration).permit(:email, :password, :password_confirmation)
   end
 
   def handle_invalid_record(e)
