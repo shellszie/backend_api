@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post "signup", to: "registration#create"
   post "login", to: "session#create"
   # match '/signup',  to: 'registration#create',             via: 'post'
+  post "/saveSearchTerm", to: "search#create"
 end
