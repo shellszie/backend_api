@@ -7,11 +7,8 @@ Rails.application.routes.draw do
   # get "up" => "rails/health#show", as: :rails_health_check
 
   resources :registration,  only: [:index]
-  # Defines the root path route ("/")
-  # root "posts#index"
-  # get "signup", to: "registration#new"
   post "signup", to: "registration#create"
   post "login", to: "session#create"
-  # match '/signup',  to: 'registration#create',             via: 'post'
   post "/saveSearchTerm", to: "search#create"
+  post "/saveBook", to: "saved_book#create"
 end

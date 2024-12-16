@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_09_123624) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_16_200713) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "saved_books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.bigint "isbn"
+    t.string "img_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
 
   create_table "searches", force: :cascade do |t|
     t.integer "user_id"
