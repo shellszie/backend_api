@@ -1,8 +1,6 @@
 class SavedBookController < ApplicationController
   def create
     @user_id = current_user.id
-    debugger
-    Rails.logger.debug "+++++++++++++++ params= #{params}"
     @saved_book_obj = SavedBook.create!(
       user_id: @user_id,
       title: params[:title],
