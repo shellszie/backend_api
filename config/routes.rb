@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   post "/saveSearchTerm", to: "search#create"
   post "/saveBook", to: "saved_book#create"
   get "/savedBooks", to: "saved_book#index"
+  delete "/savedBook/:isbn", to: "saved_book#destroy"
 end

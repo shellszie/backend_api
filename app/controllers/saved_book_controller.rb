@@ -27,6 +27,13 @@ class SavedBookController < ApplicationController
     end
   end
 
+  def destroy
+    @user_id = current_user.id
+    @saved_book = SavedBook.find_by(user_id: @user_id, isbn: params[:isbn])
+    @saved_book.destroy
+    render :status => :ok
+  end
+
   def saved_book_params
     params.require(:saved_book).permit(:title, :author, :isbn, :img_url)
   end
