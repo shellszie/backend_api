@@ -16,6 +16,17 @@ class SavedBookController < ApplicationController
     end
   end
 
+  def index
+    @user_id = current_user.id
+    @saved_books = SavedBook.where(user_id: @user_id)
+    if (@saved_books.count > 0)
+      render :json => @saved_books,
+             :status => :ok
+    else
+      render :status => :no_content
+    end
+  end
+
   def saved_book_params
     params.require(:saved_book).permit(:title, :author, :isbn, :img_url)
   end

@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post "login", to: "session#create"
   post "/saveSearchTerm", to: "search#create"
   post "/saveBook", to: "saved_book#create"
+  get "/savedBooks", to: "saved_book#index"
 end
