@@ -3,7 +3,7 @@ class VerificationMailer < ApplicationMailer
 
   def verification_email
     @email = params[:email]
-    @url  = "http://localhost:3000/code" #TODO: make it environment flexible
+    @url  = Rails.env === development ? "http://localhost:3000/code" : "https://protected-island-42169-af68303f7729.herokuapp.com/code"
     @code = params[:code]
     mail(to: @email, subject: "Feeding Reader - Verification Code")
   end
