@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   delete "/savedBook/:isbn", to: "saved_book#destroy"
   post "/verify", to: "verification#create"
   post "/verify_code", to: "verification#verify"
+  put "/update_pw", to: "registration#update"
 end

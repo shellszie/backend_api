@@ -18,7 +18,6 @@ class VerificationController < ApplicationController
   end
 
   def verify
-    debugger
     @codes = Verification.find_by(email: params[:email], code: params[:code])
     if !@codes.nil?
       render status: :ok
