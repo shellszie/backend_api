@@ -1,6 +1,5 @@
 class SearchController < ApplicationController
   def create
-    Rails.logger.debug "+++++++ in Search.create"
     @user_id = current_user.id
     @search_term = params["searchTerm"]
     # book = Book.create(title: "The Lord of the Rings", author: "J.R.R. Tolkien")
