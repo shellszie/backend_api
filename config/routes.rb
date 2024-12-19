@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   post "/saveBook", to: "saved_book#create"
   get "/savedBooks", to: "saved_book#index"
   delete "/savedBook/:isbn", to: "saved_book#destroy"
-  post "verify", to: "verification#create"
+  post "/verify", to: "verification#create"
 end
