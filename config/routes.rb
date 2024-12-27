@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   post "/verify", to: "verification#create"
   post "/verify_code", to: "verification#verify"
   put "/update_pw", to: "registration#update"
+  post "/likeBook", to: "liked_book#create"
 end
