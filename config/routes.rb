@@ -21,5 +21,5 @@ Rails.application.routes.draw do
   post "/verify_code", to: "verification#verify"
   put "/update_pw", to: "registration#update"
   post "/likeBook", to: "liked_book#create"
-  post "/thumbsDownBook/:isbn", to: "thumbs_down_book#create"
+  post "/thumbsDownBook", to: "thumbs_down_book#create"
 end

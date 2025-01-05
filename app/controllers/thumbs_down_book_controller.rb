@@ -4,7 +4,9 @@ class ThumbsDownBookController < ApplicationController
     @user_id = current_user.id
     @thumbs_down_book_obj = ThumbsDownBook.create!(
       user_id: @user_id,
-      isbn: params[:isbn]
+      isbn: params[:isbn],
+      title: params[:title],
+      author: params[:author]
     )
     if @thumbs_down_book_obj.save
       render :json => @thumbs_down_book_obj,
