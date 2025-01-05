@@ -13,7 +13,6 @@ class RegistrationController < ApplicationController
   end
 
   def update
-    debugger
     @user = User.find_by(email: params[:email])
     @token = encode_token(user_id: @user.id)
     if @user.update(user_params)
