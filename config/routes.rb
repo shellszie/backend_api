@@ -13,10 +13,13 @@ Rails.application.routes.draw do
   post "/saveBook", to: "saved_book#create"
   get "/savedBooks", to: "saved_book#index"
   get "/thumbsUpBooks", to: "liked_book#index"
+  get "/thumbsDownBooks", to: "thumbs_down_book#index"
+
   delete "/savedBook/:isbn", to: "saved_book#destroy"
   delete "/thumbsUpBook/:isbn", to: "liked_book#destroy"
   post "/verify", to: "verification#create"
   post "/verify_code", to: "verification#verify"
   put "/update_pw", to: "registration#update"
   post "/likeBook", to: "liked_book#create"
+  post "/thumbsDownBook/:isbn", to: "thumbs_down_book#create"
 end
