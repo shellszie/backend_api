@@ -26,4 +26,8 @@ class ThumbsDownBookController < ApplicationController
       render :status => :no_content
     end
   end
+
+  def thumbs_down_book_params
+    params.require(:thumbs_down_book).permit(:isbn, :title, :author)
+  end
 end
