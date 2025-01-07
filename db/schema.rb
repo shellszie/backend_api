@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_05_204412) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_07_000429) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "email_books", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.string "author"
+    t.string "img_url"
+    t.string "isbn"
+    t.string "preview_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "liked_books", force: :cascade do |t|
     t.integer "user_id"

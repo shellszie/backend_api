@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   put "/update_pw", to: "registration#update"
   post "/likeBook", to: "liked_book#create"
   post "/thumbsDownBook", to: "thumbs_down_book#create"
+
+  post "/emailBook", to: "email_book#create"
 end
