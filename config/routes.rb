@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   post "/thumbsDownBook", to: "thumbs_down_book#create"
 
   post "/emailBook", to: "email_book#create"
+  get "/emailBooks", to: "email_book#index"
 end
