@@ -81,7 +81,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    url: <%= ENV["HEROKU_POSTGRESQL_RED_URL"] %>
+    url: <%= ENV["DATABASE_URL"] %>
     database: backend_api_production
     username: backend_api
     password: <%= ENV["BACKEND_API_DATABASE_PASSWORD"] %>
